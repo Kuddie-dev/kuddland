@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuddland Imperator</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #0b0b0b; color: #eee; }
+    header, main, section { padding: 16px; }
+    .card { background: #151515; border: 1px solid #333; border-radius: 12px; padding: 12px; margin-bottom: 12px; }
+    button, select, input { width: 100%; box-sizing: border-box; padding: 10px; margin: 6px 0; border-radius: 10px; border: 1px solid #333; background: #222; color: #eee; }
+    .grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <main id="loginView" class="card">
+    <h1>Imperator Access</h1>
+    <input id="emailInput" type="email" placeholder="Email" />
+    <input id="passwordInput" type="password" placeholder="Password" />
+    <button id="loginBtn">Login</button>
+  </main>
+
+  <main id="adminView" class="hidden">
+    <header class="card">
+      <h1>Imperator Panel</h1>
+      <div id="adminBox"></div>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Users</h2>
+        <button id="reloadUsersBtn">Reload Users</button>
+        <div id="usersList"></div>
+      </div>
+
+      <div class="card">
+        <h2>Posts</h2>
+        <button id="reloadPostsBtn">Reload Posts</button>
+        <div id="postsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
